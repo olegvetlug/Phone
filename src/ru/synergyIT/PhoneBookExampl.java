@@ -10,9 +10,9 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class PhoneBookExam {
-
+public class PhoneBookExampl {
     public static void main(String[] args) {
+
         Set<PhoneUser> phoneBook = new HashSet<> ();
 
         while (phoneBook.size () < 10000) {
@@ -37,9 +37,8 @@ public class PhoneBookExam {
 
     public static PhoneUser findMustPopularUser(Set<PhoneUser> phoneBook) {
         Map<String, Integer> popularityUser = new HashMap<> ();
-        phoneBook.forEach ( phoneUser -> {
-            popularityUser.put ( phoneUser.getNumber () , 0 );
-        } );
+        phoneBook.forEach ( phoneUser -> popularityUser.put ( phoneUser.getNumber () , 0 ) );
+
         phoneBook.forEach ( phoneUser -> {
             for (int i = 0; i < phoneUser.getContactList ().size (); i++) {
                 Integer value = popularityUser.get ( phoneUser.getFromContactList ( i ).getNumber () ) + 1;
@@ -62,6 +61,5 @@ public class PhoneBookExam {
             } );
         } );
         return null;
-
     }
 }
