@@ -46,7 +46,7 @@ public class PhoneBookExampl {
             }
         } );
         int maxValue = Integer.MIN_VALUE;
-
+      //  stream().max();
         for (int value : popularityUser.values ()) {
             if (value > maxValue) {
                 maxValue = value;
